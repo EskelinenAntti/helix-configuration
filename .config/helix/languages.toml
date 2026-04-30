@@ -1,8 +1,7 @@
-[language-server.kotlin]
+[language-server.kotlin-lsp]
 command = "kotlin-lsp"
 args = ["--stdio"]
 
 [[language]]
 name = "kotlin"
-language-servers = [ "kotlin" ]
- 
+language-servers = ["kotlin-lsp"]
