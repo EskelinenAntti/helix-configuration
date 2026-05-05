@@ -5,3 +5,11 @@ line-number = "relative"
 clipboard-provider = "pasteboard"
 file-picker.hidden = false
 whitespace.render.newline = "all"
+
+[keys.normal.g]
+# Go to line in Github
+x = ":sh open $(gh repo view --json url -q .url)/blob/$(git branch --show-current)/\"%{buffer_name}#L%{cursor_line}\""
+
+[keys.normal.space]
+# Copy path to line in Github 
+l = ":sh echo $(gh repo view --json url -q .url)/blob/$(git branch --show-current)/\"%{buffer_name}#L%{cursor_line}\" | pbcopy"
