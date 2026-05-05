@@ -8,8 +8,10 @@ whitespace.render.newline = "all"
 
 [keys.normal.g]
 # Go to line in Github
-x = ":sh open $(gh repo view --json url -q .url)/blob/$(git branch --show-current)/\"%{buffer_name}#L%{cursor_line}\""
+L = ":sh open $(gh repo view --json url -q .url)/blob/$(git branch --show-current)/\"%{buffer_name}#L%{selection_line_start}-L%{selection_line_end}\""
 
 [keys.normal.space]
-# Copy path to line in Github 
-l = ":sh echo $(gh repo view --json url -q .url)/blob/$(git branch --show-current)/\"%{buffer_name}#L%{cursor_line}\" | pbcopy"
+# Copy path to line
+l = ":sh echo \"%{buffer_name}:%{cursor_line}\" | pbcopy"
+# Copy path to line in Github
+L = ":sh echo $(gh repo view --json url -q .url)/blob/$(git branch --show-current)/\"%{buffer_name}#L%{selection_line_start}-L%{selection_line_end}\" | pbcopy"
