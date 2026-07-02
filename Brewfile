@@ -15,5 +15,3 @@ brew "ruby-lsp"
 # Formatters
 brew "prettier"
 brew "go"
-
-brew "stow"
